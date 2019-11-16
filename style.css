@@ -1,0 +1,36 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.center {
+    text-align: center;
+}
+
+.sticky {
+    display: none;
+    font-family: 'Indie Flower', cursive;
+    font-size: 4em;
+    padding: 70px 0px 20px 10px;
+    word-wrap: break-word;
+    background-color: yellow;
+    box-shadow: 5px 5px 5px darkgray;
+    text-align: center;
+    width: 500px;
+    min-height: 300px; 
+    /* transform */
+    -moz-transform: skew(-1deg, -1deg);
+    -webkit-transform: skew(-1deg, -1deg);
+    -o-transform: skew(-1deg, -1deg);
+    -ms-transform: skew(-1deg, -1deg);
+    transform: skew(-1deg, -1deg);
+}
+
+.left {
+    float: left;
+}
+
+/* Media query for mobile screens ------------------------------------------------------------------------------------------------INCOMPLETE------------------------------------------------------*/

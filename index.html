@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags for Bootstrap to work-->
+    
+    <title>JavaScript Password Generator</title>
+
+    <!-- Bootstrap -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+    
+    <!-- CSS Resets -->
+    <!-- <link rel=stylesheet" type="text/css" src="https://meyerweb.com/eric/tools/css/reset/reset.css"> -->
+    <!-- <link rel=stylesheet" type="text/css" src="https://yarnpkg.com/en/package/normalize.css"> -->
+
+    <!-- Helps Old Browser Support -->
+    <style>header, section, footer, aside, nav, main, article, figure {display: block;}</style>
+
+    <!-- Custom CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css" >
+
+    <!-- Custom JavaScript -->
+    <script src="password-gen.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  </head>
+<body>
+
+<div class="left">
+    <h1>Password generator</h1>
+    <ul>
+        <li>Enter a character length between 8-128</li>
+
+        <li><input id="pLengthBox" type="text"></input></li>
+
+        <li><input type="checkbox">Check to use special characters</index></li>
+
+        <li><input type="checkbox">Check to use numbers</index></li>
+
+        <li><input type="checkbox">Check to use lowercase letters</index></li>
+
+        <li><input type="checkbox">Check to use uppercase letters</index></li>
+    </ul>
+
+    <input class="button" type="submit" onclick="myFunction()" value="Send it">
+</div>
+    <!--output - css sticky note --> 
+    <div class="center">
+        <p id="passOut" class="sticky"></p> 
+    </div>
+
+</body>
+</html>
