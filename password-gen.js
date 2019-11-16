@@ -32,12 +32,7 @@ finalPass3 = (finalPass2.replace(/,/g, ""))
 // fucking around - keeps element hidden until password is generated
 function myFunction () {
     document.getElementById("passOut").innerHTML = finalPass3
-    var x = document.getElementById("passOut");
-    if (x.style.display === "inline-block") {
-      x.style.display = "inline-block";
-    } else {
-      x.style.display = "inline-block";
-    }
+    document.getElementById("passOut").style.display = "inline-block";
 }
 // advanced - button press consideres user input and creates password, then displays it <--------------------------------INCOMPLETE--------------------------------------------------------------
 
