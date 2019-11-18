@@ -3,13 +3,16 @@ var finalPass1 = [] //create an array
 //creeate variables to store values while they convert from an array to a string
 var finalPass2 = ""
 var finalPass3 = ""
-// variables for char sets 
-var lcInclude = true
 
 //basic - set a variable for the password length 
 //advanced - take input from input form <-------------------------------------------------------------------------------------INCOMPLETE----------------------------------------------------------
 var pLength = 28
 // document.getElementById("pLengthBox").value
+// variables for char sets - called by user input checkboxes 
+var lcInclude = true
+var ucInclude = true
+var nmInclude = true
+var spInclude = true
 
 //basic - create an array of all lower case numbers 
 var lcCharset = [ "q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "a", "s", "d", "f", "g", "h", "j", "k", "l", "z", "x", "c", "v", "b", "n", "m" ]
@@ -19,6 +22,12 @@ var nmCharset = [ "1", "2", "3", "4", "5", "6", "7", "8", "9", "0" ]
 var spCharset = [ "!", "$", "%", "&", "(", ")", "+", "-", "/", "<", "?", "[", "]", "^", "_", "{", "|", "}", "~" ] //deleted items with special meaning to prevent errors 
 
 // validate user input <-----------------------------------------------------------------------------------------------------INCOMPLETE-----------------------------------------------------------
+if (pLength >= 8 && pLength <= 128) {
+    alert("Generating password now")
+} else {
+    alert("Please select a number in between 8 and 128")
+}
+
 
 // for loop that creates a password of the right length
 for (i = 0; i < pLength; i++) {
