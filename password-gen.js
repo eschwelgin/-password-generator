@@ -4,15 +4,23 @@ var finalPass1 = [] //create an array
 var finalPass2 = ""
 var finalPass3 = ""
 
+// bonus - copy button for password <------------------------------------------------------------------------------------INCOMPLETE--------------------------------------------------------------
+// function copyPass () {
+    // var copyText = document.getElementById("passOut");
+    // copyText.select()
+    // document.execCommand("copy");
+    // alert("Password Copied to Clipboard");
+// }
+
 //basic - set a variable for the password length 
 //advanced - take input from input form <-------------------------------------------------------------------------------------INCOMPLETE----------------------------------------------------------
-var pLength = 128
+var pLength = 8
 // document.getElementById("pLengthBox").value
 // variables for char sets - called by user input checkboxes 
-var lcInclude = false
-var ucInclude = true
-var nmInclude = true
-var spInclude = true
+var lcInclude = true
+var ucInclude = false
+var nmInclude = false
+var spInclude = false
 
 //basic - create an array of all lower case numbers 
 var lcCharset = [ "q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "a", "s", "d", "f", "g", "h", "j", "k", "l", "z", "x", "c", "v", "b", "n", "m" ]
@@ -34,37 +42,37 @@ for (i = 0; i < pLength; i++) {
         finalPass1[i] = (nmCharset[Math.floor(Math.random() * nmCharset.length)])
     } else if (lcInclude === false && ucInclude === false && nmInclude === false && spInclude === true) {
         finalPass1[i] = (spCharset[Math.floor(Math.random() * spCharset.length)])
-    } else if (lcInclude === true && ucInclude === true && nmInclude === false && spInclude === false) { //<-- two box
+    } else if (lcInclude === true && ucInclude === true && nmInclude === false && spInclude === false) { //<-- two box 12
         if (Math.floor(Math.random() * 2) === 1) { 
             finalPass1[i] = (lcCharset[Math.floor(Math.random() * lcCharset.length)]) 
         } else { 
             finalPass1[i] = (ucCharset[Math.floor(Math.random() * ucCharset.length)])
             }
-    } else if (lcInclude === true && ucInclude === false && nmInclude === true && spInclude === false) { //<-- two box
+    } else if (lcInclude === true && ucInclude === false && nmInclude === true && spInclude === false) { //<-- two box 13
         if (Math.floor(Math.random() * 2) === 1) { 
             finalPass1[i] = (lcCharset[Math.floor(Math.random() * lcCharset.length)]) 
         } else { 
             finalPass1[i] = (nmCharset[Math.floor(Math.random() * nmCharset.length)])
             }
-    } else if (lcInclude === true && ucInclude === false && nmInclude === false && spInclude === true) { //<-- two box
+    } else if (lcInclude === true && ucInclude === false && nmInclude === false && spInclude === true) { //<-- two box 14
         if (Math.floor(Math.random() * 2) === 1) { 
             finalPass1[i] = (lcCharset[Math.floor(Math.random() * lcCharset.length)]) 
         } else { 
             finalPass1[i] = (spCharset[Math.floor(Math.random() * spCharset.length)])
             }
-    } else if (lcInclude === false && ucInclude === true && nmInclude === true && spInclude === false) { //<-- two box
+    } else if (lcInclude === false && ucInclude === true && nmInclude === true && spInclude === false) { //<-- two box 23
         if (Math.floor(Math.random() * 2) === 1) { 
             finalPass1[i] = (ucCharset[Math.floor(Math.random() * ucCharset.length)]) 
         } else { 
             finalPass1[i] = (nmCharset[Math.floor(Math.random() * nmCharset.length)])
             }
-    } else if (lcInclude === false && ucInclude === true && nmInclude === false && spInclude === true) { //<-- two box
+    } else if (lcInclude === false && ucInclude === true && nmInclude === false && spInclude === true) { //<-- two box 24
         if (Math.floor(Math.random() * 2) === 1) { 
             finalPass1[i] = (ucCharset[Math.floor(Math.random() * ucCharset.length)]) 
         } else { 
             finalPass1[i] = (spCharset[Math.floor(Math.random() * spCharset.length)])
             }
-    } else if (lcInclude === false && ucInclude === false && nmInclude === true && spInclude === true) { //<-- two box
+    } else if (lcInclude === false && ucInclude === false && nmInclude === true && spInclude === true) { //<-- two box 34
         if (Math.floor(Math.random() * 2) === 1) { 
             finalPass1[i] = (nmCharset[Math.floor(Math.random() * nmCharset.length)]) 
         } else { 
@@ -127,17 +135,20 @@ finalPass3 = (finalPass2.replace(/,/g, ""))
 // basic - Button press displays password 
 // fucking around - keeps element hidden until password is generated
 function myFunction () {
-    document.getElementById("passOut").innerHTML = finalPass3;
-    document.getElementById("passOut").style.display = "inline-block";
+    // document.getElementById("passOut").innerHTML = finalPass3;
+    // document.getElementById("passOut").style.display = "inline-block";
     // validate user input
     if (pLength < 8 || pLength > 128) {
         alert("Please select a number in between 8 and 128")
     } 
-    if (lcInclude === false && ucInclude === false && nmInclude === false && spInclude === false) {
-        alert("Please select 1+ Character Sets" + "checkpoint 2 fail")
-    } 
+    else if (lcInclude === false && ucInclude === false && nmInclude === false && spInclude === false) {
+        alert(" Please select 1+ Character Sets \n Defaulting to All Character Sets")
+    } else {
+    (document.getElementById("passOut").innerHTML = finalPass3)
+    document.getElementById("passOut").style.display = "inline-block";
+    }
 }
-// bonus - copy button for password <------------------------------------------------------------------------------------INCOMPLETE--------------------------------------------------------------
+
 
 //-----------------------------------------------------
 // DEGRADED CODE AND TEST 
@@ -157,5 +168,5 @@ function myFunction () {
 // Watch the password convert from a string to a clean array
 // console.log(finalPass1)
 // console.log(finalPass2)
-console.log(finalPass3)
-console.log(finalPass3.length)
+// console.log(finalPass3)
+// console.log(finalPass3.length) <-- finalPass3.length always contained proper password length, but html output cut short - deleted character from spCharSet causing html to cut short 
