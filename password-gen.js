@@ -3,6 +3,8 @@ var finalPass1 = [] //create an array
 //creeate variables to store values while they convert from an array to a string
 var finalPass2 = ""
 var finalPass3 = ""
+// variables for char sets 
+var lcInclude = true
 
 //basic - set a variable for the password length 
 //advanced - take input from input form <-------------------------------------------------------------------------------------INCOMPLETE----------------------------------------------------------
@@ -21,7 +23,9 @@ var spCharset = [ "!", "$", "%", "&", "(", ")", "+", "-", "/", "<", "?", "[", "]
 // for loop that creates a password of the right length
 for (i = 0; i < pLength; i++) {
 //logic to create a password of length pLength from character set lcCharset 
-finalPass1[i] = (lcCharset[Math.floor(Math.random() * 26)])
+finalPass1[i] = (lcCharset[Math.floor(Math.random() * lcCharset.length)])
+//if [user input]=lowercase then include lcCharSet
+
 } //end for loop 
 
 //convert password from an array to a string
