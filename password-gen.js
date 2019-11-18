@@ -1,4 +1,4 @@
-// alert("This app will generate a random password")
+ alert("This app will generate a random password")
 var finalPass1 = [] //create an array
 //creeate variables to store values while they convert from an array to a string
 var finalPass2 = ""
@@ -6,7 +6,7 @@ var finalPass3 = ""
 
 //basic - set a variable for the password length 
 //advanced - take input from input form <-------------------------------------------------------------------------------------INCOMPLETE----------------------------------------------------------
-var pLength = 28
+var pLength = 29
 // document.getElementById("pLengthBox").value
 // variables for char sets - called by user input checkboxes 
 var lcInclude = true
@@ -20,14 +20,6 @@ var lcCharset = [ "q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "a", "s", "d
 var ucCharset = [ "Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", "A", "S", "D", "F", "G", "H", "J", "K", "L", "Z", "X", "C", "V", "B", "N", "M" ]
 var nmCharset = [ "1", "2", "3", "4", "5", "6", "7", "8", "9", "0" ]
 var spCharset = [ "!", "$", "%", "&", "(", ")", "+", "-", "/", "<", "?", "[", "]", "^", "_", "{", "|", "}", "~" ] //deleted items with special meaning to prevent errors 
-
-// validate user input <-----------------------------------------------------------------------------------------------------INCOMPLETE-----------------------------------------------------------
-if (pLength >= 8 && pLength <= 128) {
-    alert("Generating password now")
-} else {
-    alert("Please select a number in between 8 and 128")
-}
-
 
 // for loop that creates a password of the right length
 for (i = 0; i < pLength; i++) {
@@ -44,8 +36,20 @@ finalPass3 = (finalPass2.replace(/,/g, ""))
 // basic - Button press displays password 
 // fucking around - keeps element hidden until password is generated
 function myFunction () {
-    document.getElementById("passOut").innerHTML = finalPass3
+    document.getElementById("passOut").innerHTML = finalPass3;
     document.getElementById("passOut").style.display = "inline-block";
+    // validate user input <-- needs to be nested in the submit function somewhere 
+    if (pLength >= 8 && pLength <= 128) {
+        alert("Generating password - checkpoint 1")
+    } else {
+        alert("Please select a number in between 8 and 128")
+    }
+
+    if (lcInclude === false && ucInclude === false && nmInclude === false && spInclude === false) {
+        alert("Please select 1+ Character Sets")
+    } else {
+        alert("Generating password - checkpoint 2")
+    }
 }
 // advanced - button press consideres user input and creates password, then displays it <--------------------------------INCOMPLETE--------------------------------------------------------------
 
