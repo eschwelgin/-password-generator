@@ -1,4 +1,4 @@
-// alert("This app will generate a random password")
+alert("This app will generate a random password")
 var finalPass1 = [] //create an array
 //creeate variables to store values while they convert from an array to a string
 var finalPass2 = ""
@@ -21,6 +21,13 @@ var lcInclude = true
 var ucInclude = false
 var nmInclude = false
 var spInclude = false
+
+var pLength = prompt("Input a password length between 8-128")
+var lcInclude = confirm("Do you want Lower case characters?")
+var ucInclude = confirm("Do you want upper case characters?")
+var nmInclude = confirm("Do you want numbers?")
+var spInclude = confirm("Do you want special characters?")
+
 
 //basic - create an array of all lower case numbers 
 var lcCharset = [ "q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "a", "s", "d", "f", "g", "h", "j", "k", "l", "z", "x", "c", "v", "b", "n", "m" ]
@@ -134,7 +141,7 @@ finalPass3 = (finalPass2.replace(/,/g, ""))
 
 // basic - Button press displays password 
 // fucking around - keeps element hidden until password is generated
-function myFunction () {
+ function myFunction () {
     // document.getElementById("passOut").innerHTML = finalPass3;
     // document.getElementById("passOut").style.display = "inline-block";
     // validate user input
@@ -142,10 +149,11 @@ function myFunction () {
         alert("Please select a number in between 8 and 128")
     } 
     else if (lcInclude === false && ucInclude === false && nmInclude === false && spInclude === false) {
-        alert(" Please select 1+ Character Sets \n Defaulting to All Character Sets")
+        alert(" Please select 1+ Character Sets")
     } else {
-    (document.getElementById("passOut").innerHTML = finalPass3)
-    document.getElementById("passOut").style.display = "inline-block";
+        // alert(finalPass3)
+    document.getElementById("passOut").innerHTML = finalPass3;
+    (document.getElementById("passOut").style.display = "inline-block");
     }
 }
 

@@ -11,7 +11,7 @@ var pLength = 8
 
 // variables for char sets - called by user input checkboxes 
 var lcInclude = true
-var ucInclude = false
+var ucInclude = true
 var nmInclude = false
 var spInclude = false
 
@@ -68,11 +68,11 @@ function myFunction () {
         alert("Please select a number in between 8 and 128")
     } 
     else if (lcInclude === false && ucInclude === false && nmInclude === false && spInclude === false) {
-        alert(" Please select 1+ Character Sets")
+        alert(" Please select 1+ Character Sets \n Defaulting to All Character Sets")
     } else {
-        (document.getElementById("passOut").innerHTML = finalPass3)
-        (document.getElementById("passOut").style.display = "inline-block");
-        }
+    (document.getElementById("passOut").innerHTML = finalPass3)
+    document.getElementById("passOut").style.display = "inline-block";
+    }
 }
 
 
@@ -92,8 +92,8 @@ function myFunction () {
 // finalPass[3] = (spCharset[Math.floor(Math.random() * 19)])
 
 // Watch the password convert from a string to a clean array
-console.log(finalPass1)
-console.log(finalPass2)
+// console.log(finalPass1)
+// console.log(finalPass2)
 console.log(finalPass3)
 // console.log(finalPass3.length)
 
