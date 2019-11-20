@@ -16,21 +16,46 @@ function specials () {
     return spCharset[Math.floor(Math.random() * spCharset.length)]
 }
 
-var finalPass1 = [] //create an array to hold the password 
+//create an array to hold the password 
+var finalPass1 = [] 
 //create variables to store values while they convert from an array to a string
 var finalPass2 = ""
 var finalPass3 = ""
 
-//take input from input form <-------------DOM.value------------------------------------------------------------INCOMPLETE----------------------------------------------------------
+//take input from input form 
 var pLength = 28
-// document.getElementById("pLengthBox").value
 
-// variables for char sets - called by user input checkboxes 
-var lcInclude = true
-var ucInclude = true
-var nmInclude = true
-var spInclude = true
+// variables to include various char sets
+var lcInclude = false
+var ucInclude = false
+var nmInclude = false
+var spInclude = false
 
+function uInput() {
+    //take input from input form 
+    pLength = document.getElementById("pLengthBox").value
+    
+    if (document.getElementById("lcIncludeBox").checked) {
+        lcInclude = true
+    } else {
+        lcInclude = false
+    }
+    if (document.getElementById("ucIncludeBox").checked) {
+        ucInclude = true
+    } else {
+        ucInclude = false
+    }
+    if (document.getElementById("nmIncludeBox").checked) {
+        nmInclude = true
+    } else {
+        nmInclude = false
+    }
+    if (document.getElementById("spIncludeBox").checked) {
+        spInclude = true
+    } else {
+        spInclude = false
+    }
+}
 function sanitize() {
     if (pLength < 8 || pLength > 128) {
         alert("Please select a number in between 8 and 128")
@@ -38,12 +63,11 @@ function sanitize() {
     else if (lcInclude === false && ucInclude === false && nmInclude === false && spInclude === false) {
         alert(" Please select 1+ Character Sets")
     } else {
-        alert("Generating password now")
+        // alert("Generating password now")
     }
     finalPass1.length = 0;
 }
 function createPass() {
-    // appends values to array of value is true 
     var fns = []
     if (lcInclude === true) {
         fns.push(lowerCase)
@@ -74,6 +98,7 @@ function releasePass() {
 }
 // Button press 
 function myFunction () {
+    uInput(); 
     sanitize();
     createPass();
     convert ();
