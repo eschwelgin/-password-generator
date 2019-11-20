@@ -104,27 +104,3 @@ function myFunction () {
     convert ();
     releasePass();
 }
-
-//-----------------------------------------------------
-// DEGRADED CODE AND TEST 
-//-----------------------------------------------------
-// random digit to console log 
-// console.log(lcCharset[Math.floor(Math.random() * 26)])
-// console.log(ucCharset[Math.floor(Math.random() * 26)])
-// console.log(nmCharset[Math.floor(Math.random() * 10)])
-// console.log(spCharset[Math.floor(Math.random() * 19)])
-
-// random digits with output to an array
-// finalPass[i] = (lcCharset[Math.floor(Math.random() * 26)])
-// finalPass[1] = (ucCharset[Math.floor(Math.random() * 26)])
-// finalPass[2] = (nmCharset[Math.floor(Math.random() * 10)])
-// finalPass[3] = (spCharset[Math.floor(Math.random() * 19)])
-
-// Watch the password convert from a string to a clean array
-// console.log(finalPass1)
-// console.log(finalPass2)
-// console.log(finalPass3)
-// console.log(finalPass3.length)
-
-// manually set functions for various character sets 
-// var fns = [lowerCase, upperCase, nums, specials]
