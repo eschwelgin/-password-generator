@@ -96,6 +96,13 @@ function releasePass() {
     (document.getElementById("passOut").innerHTML = finalPass3)
     (document.getElementById("passOut").style.display = "inline-block");
 }
+
+// function copyPassword() {
+//     document.getElementById("passOut").select();
+//     document.execCommand("copy");
+//     alert ("Password copied to clipboard");
+// }
+
 // Button press 
 function myFunction () {
     uInput(); 
