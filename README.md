@@ -9,3 +9,4 @@ This is done by pulling values from user input, sanitizing those values, then ru
 The application has a clean user interface and is responsive
 
 https://eschwelgin.github.io/password-generator/
+https://imgur.com/Mzo2lws
