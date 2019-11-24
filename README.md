@@ -6,8 +6,6 @@ The application asks the user for a password length between 8 and 128, and offer
 
 This is done by pulling values from user input, sanitizing those values, then running a for loop that appends the proper characters to a string. The password is then changed from an array to a clean string, and passed back using innerHTML, at the same time changing the div from display: none to inline-block. Generating a new password follows the same basic flow, after clearing the array that holds the password.
 
-As a bonus, the user should also have the option to click a button to copy the password to their clipboard.
-
 The application has a clean user interface and is responsive
 
 https://eschwelgin.github.io/password-generator/
